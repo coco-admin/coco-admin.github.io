@@ -5,26 +5,22 @@
   
 
   
-  <title>powershell反弹shell | Hexo</title>
+  <title>使用cmd开启3389端口的方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
+  <meta name="description" content="###开启3389端口，前提是system权限 ##一、winxp和win2003终端开启 开启的REG文件代码如下：Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]“fDenyTSConnections”=dword:00000000[">
 <meta property="og:type" content="article">
-<meta property="og:title" content="powershell反弹shell">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/cs的使用教程/index.html">
+<meta property="og:title" content="使用cmd开启3389端口的方法">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/使用cmd开启3389端口的方法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
+<meta property="og:description" content="###开启3389端口，前提是system权限 ##一、winxp和win2003终端开启 开启的REG文件代码如下：Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]“fDenyTSConnections”=dword:00000000[">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/img/powershell.png">
-<meta property="og:image" content="http://yoursite.com/img/2.png">
-<meta property="og:image" content="http://yoursite.com/img/3.png">
-<meta property="og:updated_time" content="2019-10-06T13:33:15.358Z">
+<meta property="og:updated_time" content="2019-10-11T02:51:36.327Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="powershell反弹shell">
-<meta name="twitter:description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
-<meta name="twitter:image" content="http://yoursite.com/img/powershell.png">
+<meta name="twitter:title" content="使用cmd开启3389端口的方法">
+<meta name="twitter:description" content="###开启3389端口，前提是system权限 ##一、winxp和win2003终端开启 开启的REG文件代码如下：Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]“fDenyTSConnections”=dword:00000000[">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,21 +57,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-cs的使用教程" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-使用cmd开启3389端口的方法" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      powershell反弹shell
+      使用cmd开启3389端口的方法
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/09/27/cs的使用教程/" class="article-date">
-  <time datetime="2019-09-27T03:46:16.000Z" itemprop="datePublished">2019-09-27</time>
+    <a href="/2019/10/11/使用cmd开启3389端口的方法/" class="article-date">
+  <time datetime="2019-10-11T02:26:11.000Z" itemprop="datePublished">2019-10-11</time>
 </a>
     
     
@@ -90,10 +86,11 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>首先要进行监听<br><img src="/img/powershell.png" alt></p>
-<p>第二步在脚本web中选择脚本类型。但不能使用正在使用的端口<br><img src="/img/2.png" alt></p>
-<p>第三步将生成的代码复制到cmd中即可：<br><img src="/img/3.png" alt></p>
-<p>就可以在cs上监控到上线</p>
+        <p>###开启3389端口，前提是system权限</p>
+<p>##一、winxp和win2003终端开启</p>
+<p>开启的REG文件代码如下：<br>Windows Registry Editor Version 5.00<br>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]<br>“fDenyTSConnections”=dword:00000000<br>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp]<br>“PortNumber”=dword:00000D3D<br>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]<br>“PortNumber”=dword:00000D3D<br>用以下ECHO代码写一个REG文件：<br>echo Windows Registry Editor Version 5.00&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]&gt;&gt;3389.reg<br>echo “fDenyTSConnections”=dword:00000000&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>regedit /s 3389.reg<br>del 3389.reg</p>
+<p>##二、一行cmd命令开启xp和2003下的远程3389服务</p>
+<p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f<br>——————————————————或者——————————————————————<br>reg add “HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server” /v fDenyTSConnections /t REG_DWORD /d 0 /f</p>
 
       
     </div>
@@ -108,20 +105,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/10/11/使用cmd开启3389端口的方法/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            使用cmd开启3389端口的方法
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/09/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Hello World</div>
+      <a href="/2019/09/27/cs的使用教程/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">powershell反弹shell</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
