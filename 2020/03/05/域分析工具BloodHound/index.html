@@ -5,26 +5,22 @@
   
 
   
-  <title>powershell反弹shell | Hexo</title>
+  <title>域分析工具BloodHound | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
+  <meta name="description" content="简介BloodHound以用图与线的形式，将域内用户、计算机、组、Sessions、ACLs以及域内所有相关用户、组、计算机、登陆信息、访问控制策略之间的关系更直观的展现在Red Team面前进行更便捷的分析域内情况，更快速的在域内提升自己的权限。它也可以使Blue Team成员对己方网络系统进行更好的安全检测及保证域的安全性。  ##安装准备环境：windows服务器，Neo4j数据库、java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="powershell反弹shell">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/cs的使用教程/index.html">
+<meta property="og:title" content="域分析工具BloodHound">
+<meta property="og:url" content="http://yoursite.com/2020/03/05/域分析工具BloodHound/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
+<meta property="og:description" content="简介BloodHound以用图与线的形式，将域内用户、计算机、组、Sessions、ACLs以及域内所有相关用户、组、计算机、登陆信息、访问控制策略之间的关系更直观的展现在Red Team面前进行更便捷的分析域内情况，更快速的在域内提升自己的权限。它也可以使Blue Team成员对己方网络系统进行更好的安全检测及保证域的安全性。  ##安装准备环境：windows服务器，Neo4j数据库、java">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/img/powershell.png">
-<meta property="og:image" content="http://yoursite.com/img/2.png">
-<meta property="og:image" content="http://yoursite.com/img/3.png">
-<meta property="og:updated_time" content="2019-10-06T13:33:15.358Z">
+<meta property="og:updated_time" content="2020-03-05T13:10:01.589Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="powershell反弹shell">
-<meta name="twitter:description" content="首先要进行监听 第二步在脚本web中选择脚本类型。但不能使用正在使用的端口 第三步将生成的代码复制到cmd中即可： 就可以在cs上监控到上线">
-<meta name="twitter:image" content="http://yoursite.com/img/powershell.png">
+<meta name="twitter:title" content="域分析工具BloodHound">
+<meta name="twitter:description" content="简介BloodHound以用图与线的形式，将域内用户、计算机、组、Sessions、ACLs以及域内所有相关用户、组、计算机、登陆信息、访问控制策略之间的关系更直观的展现在Red Team面前进行更便捷的分析域内情况，更快速的在域内提升自己的权限。它也可以使Blue Team成员对己方网络系统进行更好的安全检测及保证域的安全性。  ##安装准备环境：windows服务器，Neo4j数据库、java">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,21 +57,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-cs的使用教程" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-域分析工具BloodHound" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      powershell反弹shell
+      域分析工具BloodHound
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/09/27/cs的使用教程/" class="article-date">
-  <time datetime="2019-09-27T03:46:16.000Z" itemprop="datePublished">2019-09-27</time>
+    <a href="/2020/03/05/域分析工具BloodHound/" class="article-date">
+  <time datetime="2020-03-05T12:55:37.000Z" itemprop="datePublished">2020-03-05</time>
 </a>
     
     
@@ -90,10 +86,10 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>首先要进行监听<br><img src="/img/powershell.png" alt></p>
-<p>第二步在脚本web中选择脚本类型。但不能使用正在使用的端口<br><img src="/img/2.png" alt></p>
-<p>第三步将生成的代码复制到cmd中即可：<br><img src="/img/3.png" alt></p>
-<p>就可以在cs上监控到上线</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>BloodHound以用图与线的形式，将域内用户、计算机、组、Sessions、ACLs以及域内所有相关用户、组、计算机、登陆信息、访问控制策略之间的关系更直观的展现在Red Team面前进行更便捷的分析域内情况，更快速的在域内提升自己的权限。它也可以使Blue Team成员对己方网络系统进行更好的安全检测及保证域的安全性。</p>
+<hr>
+<p>##安装<br>准备环境：<br>windows服务器，Neo4j数据库、java环境、BloodHound安装包</p>
+<hr>
 
       
     </div>
@@ -108,20 +104,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/10/11/使用cmd开启3389端口的方法/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            使用cmd开启3389端口的方法
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/09/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Hello World</div>
+      <a href="/2020/03/05/内网文件传输与下载/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">内网文件传输与下载</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
